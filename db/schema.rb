@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160819174958) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "where"
-    t.string   "type"
+    t.string   "is_like"
     t.integer  "days"
     t.integer  "trip_id"
     t.datetime "created_at", null: false
