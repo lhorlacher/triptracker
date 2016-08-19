@@ -1,0 +1,76 @@
+<%= form_for [@trip, @location, @address] do |f| %>
+  <%= f.label :street %>
+  <%= f.text_field :street %>
+<br />
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+<br />
+
+  <%= f.label :state %>
+  <%= f.select :state, ['AK',
+			'AL',
+			'AR',
+			'AZ',
+			'CA',
+			'CO',
+			'CT',
+			'DC',
+			'DE',
+			'FL',
+			'GA',
+			'HI',
+			'IA',
+			'ID',
+			'IL',
+			'IN',
+			'KS',
+			'KY',
+			'LA',
+			'MA',
+			'MD',
+			'ME',
+			'MI',
+			'MN',
+			'MO',
+			'MS',
+			'MT',
+			'NC',
+			'ND',
+			'NE',
+			'NH',
+			'NJ',
+			'NM',
+			'NV',
+			'NY',
+			'OH',
+			'OK',
+			'OR',
+			'PA',
+			'RI',
+			'SC',
+			'SD',
+			'TN',
+			'TX',
+			'UT',
+			'VA',
+			'VT',
+			'WA',
+			'WI',
+			'WV',
+			'WY'],
+			:include_blank => true %>
+
+<br />
+
+  <%= f.label :country%>
+  <%= f.text_field :country%>
+<br />
+
+  <%= f.label :zipcode %>
+  <%= f.numeber_field :zipcode %>
+<br />
+
+  <%= f.submit %>
+
+<% end %>
