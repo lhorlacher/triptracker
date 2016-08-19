@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -19,6 +20,8 @@
   border-radius: 10px;
   padding: 20px;
   display: inline-block;
+  margin-top: 15px;
+  text-align: center;
 }
 .enter-btn a {
   color: white;
@@ -26,10 +29,14 @@
 }
 .logo {
   font-family: 'Maven Pro', sans-serif;
+  text-align: center;
 }
 .logo-landing {
   font-size: 50px;
+  line-height: 75px;
 }
 .tagline{
-  
+  letter-spacing: .5px;
+  text-align: right;
+  padding-right: 400px;
 }
