@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = Trip.new
+    @location = Trip.locations.new
 
   end
 

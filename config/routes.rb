@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :trip do
-    resources :location
+  resources :trips do
+    resources :locations
   end
 
-  resources :location do
-    resources :address
+  resources :locations do
+    resources :addresses
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

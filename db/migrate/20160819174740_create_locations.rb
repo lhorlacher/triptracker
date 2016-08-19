@@ -3,6 +3,7 @@ class CreateLocations < ActiveRecord::Migration[5.0]
     create_table :locations do |t|
       t.string :where, required: true
       t.string :is_like
+      t.text :notes
       t.integer :days
       t.belongs_to :trip
 

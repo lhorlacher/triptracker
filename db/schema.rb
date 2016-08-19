@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160819174958) do
   create_table "locations", force: :cascade do |t|
     t.string   "where"
     t.string   "is_like"
+    t.text     "notes"
     t.integer  "days"
     t.integer  "trip_id"
     t.datetime "created_at", null: false
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160819174958) do
 
   create_table "trips", force: :cascade do |t|
     t.string   "name"
+    t.text     "notes"
     t.date     "begin"
     t.date     "end"
     t.string   "people",     default: "Me!"
