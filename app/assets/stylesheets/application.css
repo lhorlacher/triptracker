@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ header,
+ h1, h2, h3, h4, ul, li, p, form {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   vertical-align: baseline;
+ }
+body {
+  font-family: 'Lato', 'Helvetica', sans-serif;
+}

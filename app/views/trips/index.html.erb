@@ -1,2 +1,16 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+
+  <div>
+    <% if @trips.any? %>
+
+      <% @trips.each do |trip| %>
+        <h3><%= link_to trip.name, locations_path(trip) %></h3>
+      <% end %>
+
+    <% else %>
+      <h3>You haven't tripped yet! Get at it.</h3>
+      <p>Start <a href="http://www.google.com" target="_blank">Googling</a> where to go</p>
+    <% end %>
+
+  </div>
+
+  <h4><%= link_to 'Add A Trip', new_trip_path %></h4>

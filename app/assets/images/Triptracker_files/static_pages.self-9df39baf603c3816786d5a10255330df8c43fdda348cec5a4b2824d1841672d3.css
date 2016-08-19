@@ -1,0 +1,35 @@
+/* line 4, /Users/annhall/Desktop/DPL/week3/triptracker/app/assets/stylesheets/static_pages.scss */
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 9, /Users/annhall/Desktop/DPL/week3/triptracker/app/assets/stylesheets/static_pages.scss */
+.container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 13, /Users/annhall/Desktop/DPL/week3/triptracker/app/assets/stylesheets/static_pages.scss */
+.static-bg-img {
+  background: url("landing.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* line 20, /Users/annhall/Desktop/DPL/week3/triptracker/app/assets/stylesheets/static_pages.scss */
+.enter-btn {
+  color: white;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+}
+
+/* line 28, /Users/annhall/Desktop/DPL/week3/triptracker/app/assets/stylesheets/static_pages.scss */
+.enter-btn a {
+  color: white;
+  text-decoration: none;
+}

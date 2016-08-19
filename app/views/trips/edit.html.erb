@@ -1,2 +1,10 @@
-<h1>Trips#edit</h1>
-<p>Find me in app/views/trips/edit.html.erb</p>
+<div>
+  <h1> Edit Trip Info: <%= @trip.name %> </h1>
+  <%= link_to 'Delete', trip_path(@trip),
+      method: :delete, data: {confirm: 'You will lose everything in this trip, are you sure you want to delete?'} %>
+
+  <%= render(partial:'form') %>
+
+  <%=link_to 'BACK', trips_path %>
+
+</div>
