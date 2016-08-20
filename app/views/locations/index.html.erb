@@ -1,4 +1,11 @@
 <h1> <%= @trip.name %> Destinations</h1>
+
+<div>
+	<%= "Trip Dates: #{@trip.begin} - #{@trip.end} |" if @trip.begin && @trip.end %>
+	<%= "With: #{@trip.people} |" if @trip.people %> <br>
+	<%= "Notes: #{@trip.notes} |" if @trip.notes %>
+	<%= link_to 'Edit Trip Details', edit_trip_path(@trip) %><br><br>
+</div>
 <p> <%= link_to 'Add New Location', new_trip_location_path(@trip) %> </p>
 
 <% if @locations.empty? %>
@@ -7,9 +14,9 @@
 	<ul>
 		<% @locations.each do |location| %>
 			<li>
-				<%= link_to "#{location.where}", trip_location_path(@trip, location) %> <br>
-				<%= location.address ? (button_to 'Edit Address', edit_location_address_path(location, location.address)) : (button_to 'Add Address', new_location_address_path(location)) %>
-				<%= button_to 'Delete Location', trip_location_path(@trip, location), method: :delete %>
+				<%= link_to location.where, trip_location_path(@trip, location) %> <br>
+				<%= location.address ? (button_to 'Edit Address', edit_location_address_path(location, location.address), method: :get) : (button_to 'Add Address', new_location_address_path(location), method: :get) %>
+				<%= button_to 'Delete Location', trip_location_path(@trip, location), method: :delete, data: {confirm: 'You will lose all data about this location. Are you sure you want to delete?'} %>
 			</li>
 		<% end %>
 	</ul>

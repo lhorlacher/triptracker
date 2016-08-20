@@ -1,6 +1,6 @@
 <h1><%= @location.where %> Address</h1>
 
-<% if @adress.any %>
+<% if @address.any? %>
   <ul>
     <% @address.each do |address| %>
       <li class='address-info-text'> <%= address.info %> - <%=

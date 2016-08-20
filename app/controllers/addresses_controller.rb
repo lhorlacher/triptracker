@@ -1,14 +1,14 @@
 class AddressesController < ApplicationController
-  before_action :trip
+  # before_action :trip
   before_action :location
   before_action :address, only: [:show, :edit, :update, :destroy]
+
   def index
-    @address = address.all
+    @address = @location.address
   end
 
 
   def show
-    # @address =  @locations.address
   end
 
   def new
@@ -17,22 +17,21 @@ class AddressesController < ApplicationController
 
 
   def create
-    @adress = @trip.location.address.new(address_params)
+    @address = Address.new(address_params)
     if @address.save
-      redirect_to trip_location_address_path(@trip, @location, @adress)
+      redirect_to location_address_path(@location, @address)
     else
       render :new
     end
   end
 
   def edit
-    @address = @trip.location.address.find(params[:id])
   end
 
 
   def update
-    if @address = @trip.location.address.find(params[:id])
-      redirect_to trip_location_address_path
+    if @address.update(address_params)
+      redirect_to location_address_path(@location, @address)
     else
       render :edit
     end
@@ -41,7 +40,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to trip_location_address_path
+    redirect_to location_address_path(@location, @address)
   end
 
 
@@ -49,19 +48,19 @@ class AddressesController < ApplicationController
   private
 
   def address
-    @address = @trip.location.address.find(params[:id])
+    @address = @location.address
   end
 
-  def loction
-    @location = @trip.location.find(params[:id])
+  def location
+    @location = Location.find(params[:location_id])
   end
 
-  def trip
-    @trip = Trip.find(params[:trip_id])
-  end
+  # def trip
+  #   @trip = Trip.find(params[:trip_id])
+  # end
 
   def address_params
-    params.require(:address).permit(:street, :city, :state, :country, :zipcode)
+    params.require(:address).permit(:street, :city, :state, :country, :zip, :location_id)
   end
 
 

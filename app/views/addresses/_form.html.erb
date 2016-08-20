@@ -1,6 +1,16 @@
-<%= form_for [@trip, @location, @address] do |f| %>
+<h1> Address for <%= @location.where %> </h1>
+
+<% if @address.errors.any? %>
+	<ul>
+		<% @address.errors.full_messages.each do |error| %>
+		<li> <%= error %> </li>
+	<% end %>
+	</ul>
+<% end %>
+
+<%= form_for [@location, @address] do |f| %>
   <%= f.label :street %>
-  <%= f.text_field :street %>
+  <%= f.text_field :street, placeholder: '123 Street' %>
 <br />
 
   <%= f.label :city %>
@@ -67,9 +77,11 @@
   <%= f.text_field :country%>
 <br />
 
-  <%= f.label :zipcode %>
-  <%= f.numeber_field :zipcode %>
+  <%= f.label :zip %>
+  <%= f.number_field :zip %>
 <br />
+
+  <%= f.hidden_field :location_id, :value => @location.id %>
 
   <%= f.submit %>
 
