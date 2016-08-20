@@ -1,4 +1,4 @@
-<h1><%= @location.where %></h1>
+<h1>Address for <%= @location.where %></h1>
 <br />
 <p>Street: <%= @address.street %></p>
 <br />
@@ -9,3 +9,5 @@
 <p>Country: <%= @address.country%></p>
 <br />
 <p>Zipcode: <%= @address.zip%></p>
+
+<%= link_to 'Back to Location', trip_location_path(@location.trip_id, @location) %>
