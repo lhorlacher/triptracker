@@ -1,2 +1,7 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h1> <%= @location.where %> Details</h1>
+
+<p> Destination Type: <%= @location.is_like %> </p>
+<p> Days at Location: <%= @location.days %> </p>
+<p> Notes: <%= @location.notes %> </p>
+
+<%= button_to 'Edit Location Details', edit_trip_location_path(@trip, @location), method: :get %> <%= button_to 'Delete Location', trip_location_path(@trip, @location), method: :delete %>
