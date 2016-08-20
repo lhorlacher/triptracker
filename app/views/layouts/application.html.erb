@@ -9,11 +9,16 @@
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900|Pacifico|Poiret+One" rel="stylesheet">
   </head>
 
-  <body>
-    <header class="logo logo-landing">
-      <h1>TRIPPIN</h1>
+  <body class="container">
+    <header>
+      <h1 class="logo">TRIPPIN</h1>
+      <div class="navbar">
+        <%=link_to 'Home', root_path%> | <%=link_to 'My Trips', trips_path%> | <%=link_to "I've Visited" %>
+      </div>
     </header>
-    <%=link_to 'Home', root_path%> | <%=link_to 'My Trips', trips_path%> | <%=link_to "I've Visited" %>
+    <div class="clear">
+      <hr />
     <%= yield %>
+    </div>
   </body>
 </html>

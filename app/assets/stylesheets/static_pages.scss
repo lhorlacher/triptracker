@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
-  width: 100%;
+  max-width: 960px;
+  height: 100%;
   margin: 0 auto;
-  text-align: center;
 }
 .static-bg-img {
   background: url('landing.jpeg') no-repeat center center fixed;
@@ -29,14 +29,12 @@
 }
 .logo {
   font-family: 'Maven Pro', sans-serif;
-  text-align: center;
-}
-.logo-landing {
+  text-align: left;
+  float: left;
   font-size: 50px;
-  line-height: 75px;
 }
 .tagline{
   letter-spacing: .5px;
-  text-align: right;
-  padding-right: 400px;
+  display: inline-block;
+  padding-top: 32px;
 }

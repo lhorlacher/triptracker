@@ -1,11 +1,12 @@
 class TripsController < ApplicationController
-  before_action :trip, except: [:index, :new, :create]
+  before_action :trip, only: [:edit, :update, :destroy, :show]
 
   def index
     @trips = Trip.all
   end
 
-# Show redirect_to trip_locations_path
+  def show
+  end
 
   def new
     @trip = Trip.new
@@ -14,7 +15,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
-      redirect_to locations_path(@trip)
+      redirect_to trip_locations_path(@trip)
     else
       render :new
     end

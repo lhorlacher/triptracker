@@ -9,10 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900|Pacifico|Poiret+One" rel="stylesheet">
   </head>
 
-  <body class='static-bg-img'>
-    <header class="container logo logo-landing">
-      <h1>TRIPPIN</h1>
+  <body class='static-bg-img container'>
+    <header>
+      <h1 class="logo">TRIPPIN</h1>
+        <h3 class="tagline">trip tracking</h3>
     </header>
+
+    <div class="clear">
     <%= yield %>
+    </div>
+
   </body>
 </html>

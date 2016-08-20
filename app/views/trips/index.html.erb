@@ -3,7 +3,7 @@
     <% if @trips.any? %>
 
       <% @trips.each do |trip| %>
-        <h3><%= link_to trip.name, locations_path(trip) %></h3>
+        <h3><%= link_to trip.name, trip_locations_path(trip) %></h3>
       <% end %>
 
     <% else %>
