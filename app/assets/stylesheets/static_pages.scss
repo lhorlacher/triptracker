@@ -15,7 +15,6 @@
   background-size: cover;
 }
 .enter-btn {
-  color: white;
   border: 1px solid #000;
   border-radius: 10px;
   padding: 20px;
@@ -25,6 +24,9 @@
 }
 .enter-btn a {
   color: white;
+}
+.enter-btn a:hover {
+  color: black;
   text-decoration: none;
 }
 .logo {

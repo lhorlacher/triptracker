@@ -45,10 +45,44 @@ textarea {
 textarea {
 	height: 78px;
 }
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+.two-column {
+  width: 50%;
+}
+.three-column {
+  width: 30%;
+  text-align: center;
+}
+.two-column,
+.three-column {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 25px;
+}
 .navbar {
   float: right;
   margin-top: 32px;
+  letter-spacing: .5px;
+  text-align: right;
+}
+.navbar li {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: bottom;
+}
+.navbar li:last-child {
+  margin-right: 0;
 }
 .clear {
   clear: both;
+}
+.center-div {
+  text-align: center;
 }

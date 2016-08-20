@@ -12,9 +12,7 @@
   <body class="container">
     <header>
       <h1 class="logo">TRIPPIN</h1>
-      <div class="navbar">
-        <%=link_to 'Home', root_path%> | <%=link_to 'My Trips', trips_path%> | <%=link_to "I've Visited" %>
-      </div>
+      <%= render 'layouts/navbar' %>
     </header>
     <div class="clear">
       <hr />
