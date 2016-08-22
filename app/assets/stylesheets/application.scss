@@ -1,8 +1,26 @@
 @import 'materialize';
 @import 'static_pages';
-
+a {
+  color: black;
+}
+a:hover {
+  color: #00bfa5;
+}
 .nav-wrapper {
-  background-color: #757575;
+  background-color: white;
+}
+.nav-wrapper a {
+  color: black;
+}
+.search-trip {
+  background: url('map.jpg') no-repeat center center fixed;
+  margin-top: 20px;
+  padding-top: 30px;
+  height: 400px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 //  /*header,

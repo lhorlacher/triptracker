@@ -18,9 +18,9 @@
   <%= f.date_field :end %>
   <br />
   <%= f.label :people %>
-  <%= f.text_area :people, placeholder: "Who's coming with you?" %>
+  <%= f.text_area :people, placeholder: "Who's coming with you?", class: 'materialize-textarea'%>
   <br />
-  <%= f.label :image%>
-  <%= f.file_field :image%>
-  <%= f.submit %>
+  <%= f.label :image, class: 'btn'%>
+  <span style='display:none'><%= f.file_field :image%></span>
+  <%= f.submit 'submit', class: 'btn'%>
 <%end%>

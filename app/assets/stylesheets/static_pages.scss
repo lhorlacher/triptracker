@@ -10,17 +10,14 @@
   background-size: cover;
 }
 .enter-btn {
-  border: 1px solid #000;
-  border-radius: 10px;
-  padding: 20px;
-  display: inline-block;
-  margin-top: 15px;
-  text-align: center;
+  background-color: transparent;
+  border: 1px solid black;
 }
 .enter-btn a {
   color: white;
 }
-.enter-btn a:hover {
+.enter-btn:hover {
+  background-color: #bdbdbd;
   color: black;
   text-decoration: none;
 }
