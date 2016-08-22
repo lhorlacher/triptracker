@@ -5,6 +5,7 @@
       <% @trips.each do |trip| %>
         <div class="three-column">
           <h3><%= link_to trip.name, trip_locations_path(trip) %></h3>
+          <%= image_tag(trip.image.url(:small)) %>
         </div>
       <% end %>
 
