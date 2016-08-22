@@ -51,7 +51,7 @@
 			<li> 
 				<h4> <%= type %> </h4>
 				<ul>
-				<% PackItem.pack_recs[type.downcase.to_sym].each do |item| %>
+				<% PackItem.pack_recs[type.downcase.gsub(/\s+/, "").to_sym].each do |item| %>
 					<li> <%= item %> </li>
 				<% end %>
 				</ul>

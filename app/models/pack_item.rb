@@ -34,6 +34,6 @@ class PackItem < ApplicationRecord
 	end
 
 	def self.pack_recs
-		{beach: ['sunscreen', 'towel'], formal: ['tie', 'dress shoes'], dayhike: ['water bottle', 'hiking shoes'] }
+		{beach: ['sunscreen', 'towel'], formal: ['tie', 'dress shoes'], dayhike: ['water bottle', 'hiking shoes'], metro: ['walking shoes', 'transportation plans', 'pepper spray'], snowy: ['gloves', 'scarf', 'wool socks'] }
 	end
 end

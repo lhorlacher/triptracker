@@ -8,8 +8,10 @@
 			<% @locations.each do |location| %>
 				<% if location.image? %>
 					<div class='gallery'>
-						<%= link_to location.where, trip_location_path(location[:trip_id], location) %>
-						<%= image_tag(location.image.url(:small)) %>
+						<h4 class='gallery_header'> 
+							<%= link_to location.where, trip_location_path(location[:trip_id], location) %>
+							<%= image_tag(location.image.url(:small)) %>
+						</h4>
 					</div>
 				<% end %>
 			<% end %>
