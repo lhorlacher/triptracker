@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :locations
+    resources :pack_items
   end
   resources :locations do
   	resources :addresses

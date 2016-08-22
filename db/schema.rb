@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819174958) do
+ActiveRecord::Schema.define(version: 20160821232304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country",     default: "United States"
-    t.integer  "zip"
+    t.string   "street",                                null: false
+    t.string   "city",                                  null: false
+    t.string   "state",                                 null: false
+    t.string   "country",     default: "United States", null: false
+    t.integer  "zip",                                   null: false
     t.integer  "location_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160819174958) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string   "where"
+    t.string   "where",      null: false
     t.string   "is_like"
     t.text     "notes"
     t.integer  "days"
@@ -38,8 +38,20 @@ ActiveRecord::Schema.define(version: 20160819174958) do
     t.index ["trip_id"], name: "index_locations_on_trip_id", using: :btree
   end
 
-  create_table "trips", force: :cascade do |t|
+  create_table "pack_items", force: :cascade do |t|
     t.string   "name"
+    t.string   "notes"
+    t.string   "is_like"
+    t.string   "location",                   null: false
+    t.boolean  "packed",     default: false
+    t.integer  "trip_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["trip_id"], name: "index_pack_items_on_trip_id", using: :btree
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string   "name",                       null: false
     t.text     "notes"
     t.date     "begin"
     t.date     "end"

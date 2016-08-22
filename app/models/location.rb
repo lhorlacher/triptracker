@@ -5,7 +5,7 @@ class Location < ApplicationRecord
 	validates_presence_of :where
 
 	def self.is_like_options
-		%w(Beach Forest Snowy Rural Metro Formal Boat Sports)
+		%w(None Beach Day\ Hike Camp\ Out Snowy Rural Metro Formal Boat)
 	end
 
 end
