@@ -1,0 +1,21 @@
+<% if @location.errors.any? %>
+	<ul>
+		<% @location.errors.full_messages.each do |error| %>
+		<li> <%= error %> </li>
+	<% end %>
+	</ul>
+<% end %>
+
+<%= form_for [@trip, @location] do |f| %>
+	<%= f.label :where %>
+	<%= f.text_field :where, require: true %> <br>
+	<%= f.label :is_like %>
+	<%= f.select :is_like, Location.is_like_options %> <br>
+	<%= f.label :days %>
+	<%= f.number_field :days %> <br>
+	<%= f.label :notes %>
+	<%= f.text_area :notes %> <br>
+	<%= f.label :image %>
+	<%= f.file_field :image, class: 'loc_image' %>
+	<%= f.submit %>
+<% end %>

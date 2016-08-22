@@ -1,0 +1,51 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+.static-bg-img {
+  background: url('landing.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.enter-btn {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  display: inline-block;
+  margin-top: 15px;
+  text-align: center;
+}
+.enter-btn a {
+  color: white;
+}
+.enter-btn a:hover {
+  color: black;
+  text-decoration: none;
+}
+.logo {
+  font-family: 'Maven Pro', sans-serif;
+  text-align: left;
+  float: left;
+  font-size: 50px;
+}
+.tagline{
+  letter-spacing: .5px;
+  display: inline-block;
+  padding-top: 32px;
+}
+.gallery {
+  height: 350px;
+  width: 300px;
+  display: inline-block;
+  padding: 5px;
+}
+.gallery_header a {
+  color: white;
+}

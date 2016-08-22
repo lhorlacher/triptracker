@@ -1,0 +1,14 @@
+<h1><%= @location.where %> Address</h1>
+
+<% if @address.any? %>
+  <ul>
+    <% @address.each do |address| %>
+      <li class='address-info-text'> <%= address.info %> - <%=
+        link_to 'Show', trip_location_address_path(@trip, @location, address) %> </li>
+      <% end %>
+  </ul>
+<% else %>
+  <h3>No Addresses have been created. Clink the link below to create one.</h3>
+<% end %>
+
+<%= link_to 'New Address', new_trip_location_address_path(@trip, @location) %>

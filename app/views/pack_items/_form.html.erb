@@ -1,0 +1,19 @@
+<% if @pack_item.errors.any? %>
+	<ul>
+		<% @pack_item.errors.full_messages.each do |error| %>
+		<li> <%= error %> </li>
+	<% end %>
+	</ul>
+<% end %>
+
+<%= form_for [@trip, @pack_item]  do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, require: true %> <br>
+	<%= f.label :location %>
+	<%= f.select :location, PackItem.loc_options(@trip) %> <br>
+	<%= f.label :notes %>
+	<%= f.text_area :notes %> <br>
+	<%= f.label :packed %>
+	<%= f.check_box :packed %>
+	<%= f.submit %>
+<% end %>

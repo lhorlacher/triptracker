@@ -1,0 +1,13 @@
+// Place all the styles related to the Trips controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.search-trip {
+  background: url('map.jpg') no-repeat center center fixed;
+  margin-top: 20px;
+  padding-top: 30px;
+  height: 75vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

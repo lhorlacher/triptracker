@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triptracker</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,900|Pacifico|Poiret+One" rel="stylesheet">
+  </head>
+
+  <body class='static-bg-img container'>
+    <header>
+      <h1 class="logo">TRIPPIN</h1>
+        <h3 class="tagline">trip tracking</h3>
+    </header>
+
+    <div class="clear">
+    <%= yield %>
+    </div>
+
+  </body>
+</html>

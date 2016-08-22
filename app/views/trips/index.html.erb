@@ -1,0 +1,25 @@
+<h4><%= link_to 'Add A Trip', new_trip_path %></h4>
+  <div>
+    <% if @trips.any? %>
+
+      <% @trips.each do |trip| %>
+        <div class="three-column">
+          <h3><%= link_to trip.name, trip_locations_path(trip) %></h3>
+          <%= image_tag(trip.image.url(:small)) %>
+        </div>
+      <% end %>
+
+    <% else %>
+      <div class="container search-trip center-div">
+        <div>
+          <h3>You haven't tripped yet! Get at it.</h3>
+          <br />
+          <p>Start <a href="http://www.google.com" target="_blank">Googling</a> where to go or</p>
+        </div>
+
+        <div class="enter-btn"><h3><%= link_to 'ADD TRIP', new_trip_path %></h3></div>
+
+      </div>
+    <% end %>
+
+  </div>

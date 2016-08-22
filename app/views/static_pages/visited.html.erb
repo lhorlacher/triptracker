@@ -1,0 +1,19 @@
+<h1> Places I've visited </h1>
+
+<section>
+<br><br>
+	<% if @locations.empty? %>
+		<p> You haven't planned any locations for your trips yet! </p>
+	<% else %>
+			<% @locations.each do |location| %>
+				<% if location.image? %>
+					<div class='gallery'>
+						<h4 class='gallery_header'> 
+							<%= link_to location.where, trip_location_path(location[:trip_id], location) %>
+							<%= image_tag(location.image.url(:small)) %>
+						</h4>
+					</div>
+				<% end %>
+			<% end %>
+	<% end %>
+</section>
