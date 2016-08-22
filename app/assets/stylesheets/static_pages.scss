@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
-  max-width: 960px;
-  height: 100%;
-  margin: 0 auto;
-}
 .static-bg-img {
   background: url('landing.jpeg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -40,12 +35,17 @@
   display: inline-block;
   padding-top: 32px;
 }
-.gallery {
-  height: 350px;
-  width: 300px;
-  display: inline-block;
-  padding: 5px;
-}
-.gallery_header a {
-  color: white;
-}
+// .container {
+//   max-width: 960px;
+//   height: 100%;
+//   margin: 0 auto;
+// }
+// .gallery {
+//   height: 350px;
+//   width: 300px;
+//   display: inline-block;
+//   padding: 5px;
+// }
+// .gallery_header a {
+//   color: white;
+// }
