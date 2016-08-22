@@ -177,7 +177,10 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+<<<<<<< HEAD
+=======
   materialize-sass
+>>>>>>> 064777b519be45b55078511a3a3144435b54c676
   paperclip (~> 5.0)
   pg (~> 0.18)
   pry
