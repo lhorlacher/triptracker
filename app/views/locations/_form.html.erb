@@ -15,5 +15,7 @@
 	<%= f.number_field :days %> <br>
 	<%= f.label :notes %>
 	<%= f.text_area :notes %> <br>
+	<%= f.label :image %>
+	<%= f.file_field :image, class: 'loc_image' %>
 	<%= f.submit %>
 <% end %>

@@ -49,7 +49,7 @@ class LocationsController < ApplicationController
   private
 
   	def location_params
-  	  params.require(:location).permit(:where, :is_like, :days, :notes)
+  	  params.require(:location).permit(:where, :is_like, :days, :notes, :image)
 	end
 
 	# def trip

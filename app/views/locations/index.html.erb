@@ -12,13 +12,22 @@
 <% if @locations.empty? %>
 	<p> You haven't added any locations to this trip. </p>
 <% else %>
+
 	<ul>
 		<% @locations.each do |location| %>
+			<div>
+			<div class='location_listing'>
 			<li>
 				<%= link_to location.where, trip_location_path(@trip, location) %> <br>
+				Notes: <%= location.notes %>
 				<%= location.address ? (button_to 'Edit Address', edit_location_address_path(location, location.address), method: :get) : (button_to 'Add Address', new_location_address_path(location), method: :get) %>
 				<%= button_to 'Delete Location', trip_location_path(@trip, location), method: :delete, data: {confirm: 'You will lose all data about this location. Are you sure you want to delete?'} %>
 			</li>
+			</div>
+			<div class='location_image'>
+				<%= location.image? ? image_tag(location.image.url(:small)) : nil %>
+			</div>
+			</div>
 		<% end %>
 	</ul>
 <% end %>
