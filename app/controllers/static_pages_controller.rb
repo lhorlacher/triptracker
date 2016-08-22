@@ -4,5 +4,9 @@ class StaticPagesController < ApplicationController
   def home
   end
 
+  def visited
+  	@locations = Location.all
+  end
+
 
 end

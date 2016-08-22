@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get 'visited', to: 'static_pages#visited'
+
   resources :trips do
     resources :locations
     resources :pack_items
