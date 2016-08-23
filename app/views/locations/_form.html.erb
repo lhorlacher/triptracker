@@ -14,7 +14,7 @@
 		</div>
 		<div class='row'>
 			<%= f.label :is_like, class: 'active' %>
-			<%= f.select :is_like, Location.is_like_options, {include_blank: 'What is the location like?'} %> <br>
+			<%= f.select :is_like, Location.is_like_options, {include_blank: 'What is the location like?'} %>
 		</div>
 		<div class='row'>
 			<%= f.label :days, class: 'active' %>
@@ -33,3 +33,9 @@
 		</div>
 	<% end %>
 </div>
+
+<script async>
+	$(document).ready(function() {
+  		$('select').material_select();
+	});
+</script>

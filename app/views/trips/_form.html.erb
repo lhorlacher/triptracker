@@ -10,25 +10,25 @@
   <div class="col s12 m8 offset-m2">
     <%= form_for @trip do |f| %>
     <div class="input-field s12">
-      <%= f.label :name, 'Trip Name'%>
+      <%= f.label :name, 'Trip Name', class: 'active'%>
       <%= f.text_field :name, required: true %>
     </div>
 
   <div class="row">
     <div class="input-field col s6 m6">
-      <% f.label :begin, 'begin trip' %>
+      <%= f.label :begin, 'Begin Trip', class: 'active' %>
       <%= f.date_field :begin, placeholder: "start date" %>
     </div>
 
     <div class="input-field col s6 m6">
-      <% f.label :end, 'end trip' %>
+      <%= f.label :end, 'End Trip', class: 'active' %>
       <%= f.date_field :end %>
     </div>
   </div>
 
   <div class="row">
     <div class="input-field col s6 m6">
-      <%= f.label :people %>
+      <%= f.label :people, class: 'active' %>
       <%= f.text_area :people, placeholder: "Who's coming with you?", class: 'materialize-textarea'%>
     </div>
 

@@ -5,12 +5,13 @@
       <i class="tiny material-icons">add_box</i><%= link_to 'Add A Trip', new_trip_path %>
     </div>
 
-    <div class="col s12 m4">
+    
       <% @trips.each do |trip| %>
-      <div class="pull-left">
+      <div class="col s12 m4">
+<!--       <div class="pull-left"> -->
         <h4><%= link_to trip.name, trip_locations_path(trip) %></h4>
           <%= image_tag(trip.image.url(:small))%>
-      </div>
+<!--       </div> -->
     </div>
       <% end %>
 
