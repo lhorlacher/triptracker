@@ -9,32 +9,24 @@
 <div class='row'>
 	<%= form_for [@trip, @pack_item]  do |f| %>
 	<div class='row'>
-		<div class='input-field'>
 			<%= f.label :name %>
 			<%= f.text_field :name, require: true %>
-		</div>
 	</div>
 	<div class='row'>
 			<%= f.label :location %>
-			<%= f.select :location, PackItem.loc_options(@trip), {include_blank: 'Which location is this for?'}, class: 'browser-default' %>
+			<%= f.select :location, PackItem.loc_options(@trip), {include_blank: 'Which location is this for?'} %>
 	</div>	
 	<div class='row'>
-		<div class='input-field'>
 			<%= f.label :notes %>
 			<%= f.text_area :notes, class: 'materialize-textarea' %>
-		</div>
 	</div>
 	<div class='row'>
-		<div class='input-field col s12 m4'>
+
 			<%= f.check_box :packed %>
 			<%= f.label :packed %>
-		</div>
 	</div>
 	<div class='row'>
-		<div class='col s12 m8'>
 			<%= f.submit 'Submit', class: 'btn' %>
-		</div>
 	</div>
-
 	<% end %>
 </div>
