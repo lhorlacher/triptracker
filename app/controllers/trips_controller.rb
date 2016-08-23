@@ -26,9 +26,9 @@ class TripsController < ApplicationController
 
   def update
     if @trip.update(trip_params)
-      redirect_to trip_path(@trip)
+      redirect_to trip_locations_path(@trip)
     else
-      rener :edit
+      render :edit
     end
   end
 

@@ -5,7 +5,7 @@ class CreateTrips < ActiveRecord::Migration[5.0]
       t.text :notes
       t.date :begin
       t.date :end
-      t.string :people, default: 'Me!'
+      t.string :people
 
       t.timestamps
     end

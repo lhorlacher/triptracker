@@ -1,0 +1,24 @@
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12 grey-text text-darken-4">
+        <h5>Trip Tracker</h5>
+        <p>Upload your trip photos, keep track of
+                            favorite locations and addresses, and revisit the fun.</p>
+      </div>
+      <div class="col l4 offset-l2 s12 grey-text text-darken-4">
+        <h5>menu</h5>
+        <ul>
+          <li><%=link_to 'My Trips', trips_path%></li>
+          <li><%=link_to "I've Visited", visited_path%></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container grey-text text-darken-4">
+    © 2016 Trippin Trip tracking
+    <%=link_to 'Home', root_path, class: 'right'%>
+    </div>
+  </div>
+</footer>

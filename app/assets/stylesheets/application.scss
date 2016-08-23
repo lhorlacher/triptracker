@@ -1,5 +1,7 @@
 @import 'materialize';
 @import 'static_pages';
+
+
 a {
   color: black;
 }
@@ -13,7 +15,8 @@ a:hover {
   color: black;
 }
 .search-trip {
-  background: url('map.jpg') no-repeat center center fixed;
+  background: url('map.jpg') no-repeat center center;
+  border-radius: 5px;
   margin-top: 20px;
   padding-top: 30px;
   height: 400px;
@@ -22,6 +25,10 @@ a:hover {
   -o-background-size: cover;
   background-size: cover;
 }
+footer.page-footer {
+  background-color: #f5f5f5;
+}
+
 
 //  /*header,
 //  h1, h2, h3, h4, ul, li, p, form {

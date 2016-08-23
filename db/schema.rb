@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 20160822191052) do
     t.text     "notes"
     t.date     "begin"
     t.date     "end"
-    t.string   "people",             default: "Me!"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.string   "people"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
