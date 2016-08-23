@@ -16,19 +16,11 @@ ActiveRecord::Schema.define(version: 20160822191052) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country",     default: "United States"
-    t.integer  "zip"
-=======
     t.string   "street",                                null: false
     t.string   "city",                                  null: false
     t.string   "state",                                 null: false
     t.string   "country",     default: "United States", null: false
     t.integer  "zip",                                   null: false
->>>>>>> 064777b519be45b55078511a3a3144435b54c676
     t.integer  "location_id"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
@@ -36,11 +28,7 @@ ActiveRecord::Schema.define(version: 20160822191052) do
   end
 
   create_table "locations", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string   "where"
-=======
     t.string   "where",              null: false
->>>>>>> 064777b519be45b55078511a3a3144435b54c676
     t.string   "is_like"
     t.text     "notes"
     t.integer  "days"
@@ -67,11 +55,7 @@ ActiveRecord::Schema.define(version: 20160822191052) do
   end
 
   create_table "trips", force: :cascade do |t|
-<<<<<<< HEAD
-    t.string   "name"
-=======
     t.string   "name",                               null: false
->>>>>>> 064777b519be45b55078511a3a3144435b54c676
     t.text     "notes"
     t.date     "begin"
     t.date     "end"

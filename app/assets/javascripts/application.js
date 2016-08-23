@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< HEAD
-=======
 //= require materialize-sprockets
->>>>>>> 064777b519be45b55078511a3a3144435b54c676
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+  $('select').material_select();
+});

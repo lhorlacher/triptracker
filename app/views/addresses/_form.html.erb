@@ -8,7 +8,7 @@
 	</ul>
 <% end %>
 
-<%= form_for [@location, @address] do |f| %>
+<%= form_for [@trip, @location, @address] do |f| %>
   <%= f.label :street %>
   <%= f.text_field :street, placeholder: '123 Street' %>
 <br />
@@ -17,59 +17,8 @@
   <%= f.text_field :city %>
 <br />
 
-  <%= f.label :state %>
-  <%= f.select :state, ['AK',
-			'AL',
-			'AR',
-			'AZ',
-			'CA',
-			'CO',
-			'CT',
-			'DC',
-			'DE',
-			'FL',
-			'GA',
-			'HI',
-			'IA',
-			'ID',
-			'IL',
-			'IN',
-			'KS',
-			'KY',
-			'LA',
-			'MA',
-			'MD',
-			'ME',
-			'MI',
-			'MN',
-			'MO',
-			'MS',
-			'MT',
-			'NC',
-			'ND',
-			'NE',
-			'NH',
-			'NJ',
-			'NM',
-			'NV',
-			'NY',
-			'OH',
-			'OK',
-			'OR',
-			'PA',
-			'RI',
-			'SC',
-			'SD',
-			'TN',
-			'TX',
-			'UT',
-			'VA',
-			'VT',
-			'WA',
-			'WI',
-			'WV',
-			'WY'],
-			:include_blank => true %>
+	<%= f.label :state %>
+	<%= f.select :state, Address.states %>
 
 <br />
 
@@ -83,6 +32,6 @@
 
   <%= f.hidden_field :location_id, :value => @location.id %>
 
-  <%= f.submit %>
+  <%= f.submit 'Submit', class: 'btn'%>
 
 <% end %>
