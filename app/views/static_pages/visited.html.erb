@@ -5,15 +5,17 @@
 	<% if @locations.empty? %>
 		<p> You haven't planned any locations for your trips yet! </p>
 	<% else %>
+	<div class='row'>
 			<% @locations.each do |location| %>
 				<% if location.image? %>
-					<div class='gallery'>
-						<h4 class='gallery_header'> 
-							<%= link_to location.where, trip_location_path(location[:trip_id], location) %>
+					<div class='col s12 m4'>
+						<h5 class='visited'> 
+							<%= link_to location.where, trip_location_path(location[:trip_id], location) %> <br>
 							<%= image_tag(location.image.url(:small)) %>
-						</h4>
+						</h5>
 					</div>
 				<% end %>
 			<% end %>
+	</div>
 	<% end %>
 </section>

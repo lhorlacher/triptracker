@@ -52,11 +52,11 @@ class LocationsController < ApplicationController
   	  params.require(:location).permit(:where, :is_like, :days, :notes, :image)
 	end
 
-	# def trip
-	# 	@trip = Trip.find(params[trip_id])
-	# end
+	def trip
+		@trip = Trip.find(params[trip_id])
+	end
 
-	# def location
-	# 	@location = @trip.locations.find(params[:id])
-	# end
+	def location
+		@location = @trip.locations.find(params[:id])
+	end
 end
