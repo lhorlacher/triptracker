@@ -1,4 +1,4 @@
-<h1> <%= @location.where %> Details</h1>
+<h2> <%= @location.where %> Details</h2>
 
 <p> Destination Type: <%= @location.is_like %> </p>
 <p> Days at Location: <%= @location.days %> </p>
@@ -6,6 +6,15 @@
 
 <%= image_tag(@location.image.url) %>
 
-<%= button_to 'Edit Location Details', edit_trip_location_path(@trip, @location), method: :get %> 
-<%= @location.address ? (button_to 'Edit Address', edit_location_address_path(@location, @location.address), method: :get) : (button_to 'Add Address', new_location_address_path(@location), method: :get) %>
-<%= button_to 'Delete Location', trip_location_path(@trip, @location), method: :delete, data: {confirm: 'You will lose all data about this location. Are you sure you want to delete?'} %>
+<div class='row'>
+	<div class='col s12 m4'>
+	<%= button_to 'Edit Location Details', edit_trip_location_path(@trip, @location), method: :get, class: 'btn' %> 
+	</div>
+	<div class='col s12 m4'>
+	<%= @location.address ? (button_to 'Edit Address', edit_location_address_path(@location, @location.address), method: :get, class: 'btn') : (button_to 'Add Address', new_location_address_path(@location), method: :get, class: 'btn') %>
+	</div>
+	<div class='col s12 m4'>
+	<%= button_to 'Delete Location', trip_location_path(@trip, @location), method: :delete, data: {confirm: 'You will lose all data about this location. Are you sure you want to delete?'}, class: 'btn' %>
+	</div>
+</div>
+

@@ -6,16 +6,46 @@
 	</ul>
 <% end %>
 
-<%= form_for [@trip, @location] do |f| %>
-	<%= f.label :where %>
-	<%= f.text_field :where, require: true %> <br>
-	<%= f.label :is_like %>
-	<%= f.select :is_like, Location.is_like_options %> <br>
-	<%= f.label :days %>
-	<%= f.number_field :days %> <br>
-	<%= f.label :notes %>
-	<%= f.text_area :notes %> <br>
-	<%= f.label :image %>
-	<%= f.file_field :image, class: 'loc_image' %>
-	<%= f.submit %>
-<% end %>
+<div class='row'>
+	<%= form_for [@trip, @location] do |f| %>
+
+		<div class='row'>
+			<div class='input-field col s12'>
+				<%= f.label :where %>
+				<%= f.text_field :where, require: true %>
+			</div>
+		</div>
+
+		</div class='row'>
+			<div>
+				<%= f.label :is_like, class: 'active' %>
+				<%= f.select :is_like, Location.is_like_options, {include_blank: 'What is the location like?'}, class: 'browser-default' %>
+			</div>
+			<div class='input-field'>
+				<%= f.label :days %>
+				<%= f.number_field :days %>
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='input-field s12'>
+				<%= f.label :notes %>
+				<%= f.text_area :notes, class: "materialize-textarea" %>
+			</div>
+			 <br>
+		</div>
+
+		<div class='row'>
+			<div class='text_area-field col s12'>
+				<%= f.label :image, class: 'active', class: 'btn' %>
+				<span style='display:none'> <%= f.file_field :image, class: 'btn' %> </span>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='col s12'>
+				<%= f.submit 'Submit', class: 'btn' %>
+			</div>
+		</div>
+
+	<% end %>
+</div>

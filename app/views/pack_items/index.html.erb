@@ -1,55 +1,53 @@
-<h1>Packing List for <%= @trip.name %> </h1>
+<h2>Packing List for <%= @trip.name %> </h2>
 
 <%= link_to 'Add New Item', new_trip_pack_item_path(@trip) %>
 <%= link_to 'Location View', trip_locations_path(@trip) %>
 
-<section>
-<div id='unpacked'>
-<h2>Still to Pack</h2>
+<div class='row'>
+	<div class='col s12 m6'>
+		<h3>Still to Pack</h3>
+		<ul>
+			<% @locations.each do |location| %>
+			<li> <h5> <%= location %> </h5>
+				<ul>
+					<% PackItem.filter_items(location).each do |item| %>
+					<li> 
+						<%= link_to item.name, edit_trip_pack_item_path(@trip, item) %> - <%= item.notes %>
+						<%= link_to 'Delete Item', trip_pack_item_path(@trip, item), method: :delete %>
+					</li>
+					<% end %>
+				</ul>
+			</li>
+			<% end %>
+		</ul>
+	</div>
 
-	<ul>
-		<% @locations.each do |location| %>
-		<li> <h4> <%= location %> </h4>
-			<ul>
-				<% PackItem.filter_items(location).each do |item| %>
-				<li> 
-					<%= link_to item.name, edit_trip_pack_item_path(@trip, item) %> - <%= item.notes %>
-					<%= link_to 'Delete Item', trip_pack_item_path(@trip, item), method: :delete %>
-				</li>
-				<% end %>
-			</ul>
-		</li>
-		<% end %>
-	</ul>
+	<div class='col s12 m6'>
+		<h3>Packed!</h3>
+		<ul>
+			<% @locations.each do |location| %>
+			<li> <h5> <%= location %> </h5>
+				<ul>
+					<% PackItem.filter_packed_items(location).each do |item| %>
+					<li> 
+						<%= link_to item.name, edit_trip_pack_item_path(@trip, item) %> - <%= item.notes %>
+						<%= link_to 'Delete Item', trip_pack_item_path(@trip, item), method: :delete %>
+						 
+					</li>
+					<% end %>
+				</ul>
+			</li>
+			<% end %>
+		</ul>
+	</div>
 </div>
 
-<div id='packed'>
-<h2>Packed!</h2>
-
-	<ul>
-		<% @locations.each do |location| %>
-		<li> <h4> <%= location %> </h4>
-			<ul>
-				<% PackItem.filter_packed_items(location).each do |item| %>
-				<li> 
-					<%= link_to item.name, edit_trip_pack_item_path(@trip, item) %> - <%= item.notes %>
-					<%= link_to 'Delete Item', trip_pack_item_path(@trip, item), method: :delete %>
-					 
-				</li>
-				<% end %>
-			</ul>
-		</li>
-		<% end %>
-	</ul>
-</div>
-</section>
-
-<div id='recommended'>
-<h2>Recommended</h2>
+<div class='row'>
+	<h3>Recommended</h3>
 	<ul>
 		<% PackItem.by_is_like(@trip).each do |type| %>
 			<li> 
-				<h4> <%= type %> </h4>
+				<h5> <%= type %> </h5>
 				<ul>
 				<% PackItem.pack_recs[type.downcase.gsub(/\s+/, "").to_sym].each do |item| %>
 					<li> <%= item %> </li>
@@ -58,5 +56,4 @@
 			</li>
 		<% end %>
 	</ul>
-	
 </div>
