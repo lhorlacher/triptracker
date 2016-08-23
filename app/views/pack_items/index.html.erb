@@ -1,11 +1,11 @@
 <h2>Packing List for <%= @trip.name %> </h2>
 
-<%= link_to 'Add New Item', new_trip_pack_item_path(@trip) %>
+<%= link_to 'Add New Item', new_trip_pack_item_path(@trip) %> |
 <%= link_to 'Location View', trip_locations_path(@trip) %>
 
 <div class='row'>
 	<div class='col s12 m6'>
-		<h3>Still to Pack</h3>
+		<h4>Still to Pack</h4>
 		<ul>
 			<% @locations.each do |location| %>
 			<li> <h5> <%= location %> </h5>
@@ -23,7 +23,7 @@
 	</div>
 
 	<div class='col s12 m6'>
-		<h3>Packed!</h3>
+		<h4>Packed!</h4>
 		<ul>
 			<% @locations.each do |location| %>
 			<li> <h5> <%= location %> </h5>
@@ -43,7 +43,7 @@
 </div>
 
 <div class='row'>
-	<h3>Recommended</h3>
+	<h4>Recommended</h4>
 	<ul>
 		<% PackItem.by_is_like(@trip).each do |type| %>
 			<li> 

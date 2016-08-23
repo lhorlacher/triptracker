@@ -4,10 +4,11 @@
 	<%= "Trip Dates: #{@trip.begin} - #{@trip.end} |" if @trip.begin && @trip.end %>
 	<%= "With: #{@trip.people} |" if @trip.people %> <br>
 	<%= "Notes: #{@trip.notes} |" if @trip.notes %>
-	<%= link_to 'Edit Trip Details', edit_trip_path(@trip) %>
-	<%= link_to 'View Packing List', trip_pack_items_path(@trip) %> <br><br>
+	<%= link_to 'Edit Trip Details', edit_trip_path(@trip) %> |
+	<%= link_to 'View Packing List', trip_pack_items_path(@trip) %> |
+	<%= link_to 'Add New Location', new_trip_location_path(@trip) %> <br><br>
 </div>
-<div class='col s12'> <%= link_to 'Add New Location', new_trip_location_path(@trip) %> </div>
+
 
 <% if @locations.empty? %>
 	<p> You haven't added any locations to this trip. </p>
